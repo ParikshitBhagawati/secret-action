@@ -30,5 +30,6 @@ jobs:
           echo "Running Bash Script...."
           SECRETS_ARRAY=("HUMARA_SECRET1", HUMARA_SECRET2)
           for str in ${SECRETS_ARRAY[@]}; do
-            echo ${{ secrets[str] }}
+            echo "sec_key=$str" >> $GITHUB_ENV
+            echo ${{ secrets[env.sec_key] }}
           done
