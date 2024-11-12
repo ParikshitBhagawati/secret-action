@@ -29,6 +29,6 @@ jobs:
           SECRETS_ARRAY=("HUMARA_SECRET_1", HUMARA_SECRET_1)
           for str in ${SECRETS_ARRAY[@]}; do
             echo "sec_key=$str" >> $GITHUB_ENV
-            echo ${{ env.sec_key }}
-            echo ${{ secrets.HUMARA_SECRET_1 }}
+            echo "Chaloge ? : "
+            echo ${{ secrets[env.sec_key] }}
           done
