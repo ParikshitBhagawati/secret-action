@@ -28,7 +28,7 @@ jobs:
           SECRETS: '${{ toJson(secrets) }}'
         run: |
           echo "Running Bash Script...."
-          SECRETS_ARRAY=("HUMARA_SECRET_1", HUMARA_SECRET_1)
+          SECRETS_ARRAY=("HUMARA_SECRET_1", HUMARA_SECRET_2)
           for secret in ${SECRETS_ARRAY[@]}; do
             value="$(jq -r --arg key "$secret" '.[$key]' <<< "$SECRETS" | sed 's|.|& |g')"
             echo "$secret: $value"
